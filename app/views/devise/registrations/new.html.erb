@@ -1,0 +1,103 @@
+<div class="contents row">
+  <div class="container">
+    <h2>Sign up</h2>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+ <!-- タイトル -->
+<div style="text-align: center; margin-top: 40px;">
+  <h2 style="font-size: 24px; font-weight: bold;">会員情報入力</h2>
+</div>
+
+<!-- 登録フォーム -->
+<div style="max-width: 600px; background: white; padding: 40px 30px; margin: 40px auto; border: 1px solid #eee; border-radius: 6px;">
+  <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+    <div class="field">
+      <%= f.label :nickname do %>
+        ニックネーム <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.text_field :nickname, placeholder: "例）furima太郎", style: "width: 100%; padding: 8px;" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email do %>
+        メールアドレス <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.email_field :email, placeholder: "PC・携帯どちらでも可", style: "width: 100%; padding: 8px;" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password do %>
+        パスワード <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.password_field :password, placeholder: "6文字以上の半角英数字", autocomplete: "off", style: "width: 100%; padding: 8px;" %>
+      <small>※英字と数字の両方を含めて設定してください</small>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation do %>
+        パスワード（確認） <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.password_field :password_confirmation, placeholder: "同じパスワードを入力して下さい", autocomplete: "off", style: "width: 100%; padding: 8px;" %>
+    </div>
+
+    <div class="field">
+      <strong>本人確認</strong><br />
+      <p style="font-size: 13px;">
+        安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。<br />
+        他のお客さまに公開されることはありません。
+      </p>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name do %>
+        お名前（全角） <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.text_field :last_name, placeholder: "例）山田", style: "width: 100%; padding: 8px;" %><br />
+      <%= f.text_field :first_name, placeholder: "例）陸太郎", style: "width: 100%; padding: 8px;" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name_kana do %>
+        お名前カナ（全角） <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.text_field :last_name_kana, placeholder: "例）ヤマダ", style: "width: 100%; padding: 8px;" %><br />
+      <%= f.text_field :first_name_kana, placeholder: "例）リクタロウ", style: "width: 100%; padding: 8px;" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :date do %>
+        生年月日 <span style="color: white; background-color: red; font-size: 12px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">必須</span>
+      <% end %><br />
+      <%= f.date_select :date,
+        start_year: Date.today.year - 100,
+        end_year: Date.today.year,
+       
+        prompt: { year: '-', month: '-', day: '-' } %>
+      <p style="font-size: 12px; color: #888; margin-top: 5px;">
+        ※ 本人情報は正しく入力してください。会員登録後、修正にはお時間を頂く場合があります。
+      </p>
+    </div>
+
+    <p style="text-align: center; font-size: 13px; margin-top: 20px;">
+      「会員登録」のボタンを押すことにより、<a href="#" style="color: #007bff;">利用規約</a> に同意したものとみなします
+    </p>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <%= f.submit "会員登録", style: "background-color: red; color: white; padding: 12px 60px; font-weight: bold; border: none; border-radius: 4px; font-size: 16px;" %>
+    </div>
+
+  <% end %>
+</div>
+
+<!-- ページ下部のリンク -->
+<div style="text-align: center; font-size: 13px; margin-bottom: 40px;">
+  <%= link_to "本人情報の登録について", "#", style: "color: #007bff;" %>
+</div>
+
+
+
+    <% end %>
+  </div>
+</div>
