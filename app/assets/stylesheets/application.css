@@ -13,8 +13,4 @@
  *= require_tree .
  *= require_self
  */
- @import "reset";
- @import "shared/header";
- @import "shared/footer";
- @import "user/sessions"; // 必要に応じて他のページも追加
- @import "shared/second_header";
+ 
