@@ -36,3 +36,8 @@
 
 .Ds_Store
 *.Zone.Identifier
+app/views/devise/mailer/email_changed.html.erbZone.Identifier
+app/views/devise/mailer/reset_password_instructions.html.erbZone.Identifier
+app/views/items/index.html.erbZone.Identifier
+app/views/orders/index.html.erbZone.Identifier
+app/views/shared/_error_messages.html.erbZone.Identifier
