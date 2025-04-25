@@ -54,3 +54,4 @@ app/views/devise/mailer/unlock_instructions.html.erbZone.Identifier
 app/views/devise/mailer/password_change.html.erbZone.Identifier
 app/views/devise/mailer/confirmation_instructions.html.erbZone.Identifier
 app/views/devise/confirmations/new.html.erbZone.Identifier
+app/views/shared/_header.html.erbZone.Identifier
